@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <classPathEntry location="mysql-connector-java-5.1.31.jar"/>
+
+    <context id="context" targetRuntime="MyBatis3Simple">
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection 
+            userId="" 
+            password="" 
+            driverClass="com.mysql.jdbc.Driver" 
+            connectionURL=""
+        />
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        
+        <!-- 映射对象DO类 只需指定DO所在的路径-->
+        <javaModelGenerator
+            targetPackage="" 
+            targetProject="mappers">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- xml文件 只需指定mybatis xml文件所在的路径-->
+        <sqlMapGenerator 
+            targetPackage="../" 
+            targetProject="mappers">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- mapper接口 只需指定mapper接口所在的路径-->
+        <javaClientGenerator 
+            targetPackage=""
+            type="XMLMAPPER" 
+            targetProject="mappers">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+		<!-- 需要指定表名 -->
+        <table schema="" 
+            tableName="" 
+            enableCountByExample="false" 
+            enableDeleteByExample="false"
+            enableSelectByExample="false" 
+            enableUpdateByExample="false"
+        />
+    </context>
+</generatorConfiguration>
